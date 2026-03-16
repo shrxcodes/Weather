@@ -5,39 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=location_on" /> -->
 </head>
+
 <body>
-
-    <div class="card">
-        <div class="search">
-            <input type="text" id="city-input" placeholder="Enter city name">
-            <button onclick="getWeather()">
-                <img src="https://cdn-icons-png.flaticon.com/512/3917/3917754.png" width="20">
+<div class="app-layout">
+    <main class="main-container">
+        <header class="input-container">
+            <input class="city-input" placeholder="Search City" type="text">
+            <button class="search-btn">
+                <span class="material-symbols-outlined">search
+                </span>
             </button>
-        </div>
-
-        <div class="error" id="error">Invalid City Name</div>
-
-        <div class="weather" id="weather-box">
-            <img id="weather-icon" src="" class="weather-icon">
-            <h1 id="temp">--°C</h1>
-            <h2 id="city-name">City</h2>
-
-            <div class="details">
-                <div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/414/414974.png">
-                    <p><span id="humidity">--</span>%<br>Humidity</p>
+        </header>
+        <section class="weather-info" style="display: none;">
+            <div class="location-date-container">
+                <div class="location">
+                    <span class="material-symbols-outlined">
+                        location_on
+                    </span>
+                    <h4 class="country-txt">Jakarta </h4>
                 </div>
-
-                <div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/633/633759.png">
-                    <p><span id="wind">--</span> km/h<br>Wind</p>
+                <h4 class="current-date-txt">Wed,08 Jan</h4>
+            </div>
+            <div class="weather-summary-container">
+                <img src="clouds.svg" alt="" class="weather-summary-img">
+                <div class="weather-summary-info">
+                    <h1 class="temp-txt">12°C</h1>
+                    <h3 class="condition-txt regular-txt">Foggy</h3>
                 </div>
             </div>
+            <div class="weather-condition">
+                <div class="condition">
+                    <span class="material-symbols-outlined">
+                        water_drop
+                    </span>
+                    <h5 class="humidity">Humidity</h5>
+                    <h5 class="humidity-value">60%</h5>
+                </div>
+                <div class="condition">
+                    <span class="material-symbols-outlined">
+                        air
+                    </span>
+                    <h5 class="wind">Wind Speed</h5>
+                    <h5 class="wind-value">60%</h5>
+                </div>
+            </div>
+            <!-- day to day weather -->
+            <div class="forecast-container">
+                <div class="forecast-item">
+                    <h5 class="forecast-date">08 Jan</h5>
+                    <h5 class="forecast-date">Mon</h5>
+                    <img src="images/thunder.png" class="forecast-img">
+                    <h5 class="forecast-temp">
+                        <span class="temp-min">18°</span> /
+                        <span class="temp-max">26°</span>
+                    </h5>
+                </div>
+                <div class="forecast-item">
+                    <h5 class="forecast-date">08 Jan</h5>
+                    <h5 class="forecast-date">Tues</h5>
+                    <img src="images/thunder.png" class="forecast-img">
+                    <h5 class="forecast-temp">
+                        <span class="temp-min">18°</span> /
+                        <span class="temp-max">26°</span>
+                    </h5>
+                </div>
+                <div class="forecast-item">
+                    <h5 class="forecast-date">08 Jan</h5>
+                    <h5 class="forecast-date">Wed</h5>
+                    <img src="images/thunder.png" class="forecast-img">
+                    <h5 class="forecast-temp">
+                        <span class="temp-min">18°</span> /
+                        <span class="temp-max">26°</span>
+                    </h5>
+                </div>
+                <div class="forecast-item">
+                    <h5 class="forecast-date">08 Jan</h5>
+                    <h5 class="forecast-date">Thurs</h5>
+                    <img src="images/thunder.png" class="forecast-img">
+                    <h5 class="forecast-temp">
+                        <span class="temp-min">18°</span> /
+                        <span class="temp-max">26°</span>
+                    </h5>
+                </div>
+                <div class="forecast-item">
+                    <h5 class="forecast-date">08 Jan</h5>
+                    <h5 class="forecast-date">Fri</h5>
+                    <img src="images/fog.svg" class="forecast-img">
+                    <h5 class="forecast-temp">
+                        <span class="temp-min">18°</span> /
+                        <span class="temp-max">26°</span>
+                    </h5>
+                </div>
+                <div class="forecast-item">
+                    <h5 class="forecast-date">08 Jan</h5>
+                    <h5 class="forecast-date">Sat</h5>
+                    <img src="images/thunder.png" class="forecast-img">
+                    <h5 class="forecast-temp">
+                        <span class="temp-min">18°</span> /
+                        <span class="temp-max">26°</span>
+                    </h5>
+                </div>
+                <div class="forecast-item">
+                    <h5 class="forecast-date">08 Jan</h5>
+                    <h5 class="forecast-date">Sun</h5>
+                    <img src="images/thunder.png" class="forecast-img">
+                    <h5 class="forecast-temp">
+                        <span class="temp-min">18°</span> /
+                        <span class="temp-max">26°</span>
+                    </h5>
+                </div>
+            </div>
+        </section>
+        <!-- search city -->
+
+        <section class="search-city">
+            <img src="images/search_web.svg" class="search-img">
+            <div>
+                <h1>Search City</h1>
+                <h5>Find out weather conditions of the city</h5>
+            </div>
+        </section>
+
+        <!-- NOT FOUND  -->
+        <section class="search-not-found" style="display: none;">
+            <img src="images/404 error.svg" class="not-found-img">
+            <div>
+                <h1>OOPS!</h1>
+                <h5>City Not Found</h5><br>
+            </div>
+        </section>
+
+    </main>
+   <div class="hourly-wrapper" style="display: none;">
+        <h4 class="hourly-title" >Today</h4>
+        <div class="hourly-side-panel">
+            <div class="hourly-side-list"></div>
         </div>
     </div>
-
-<script src="script.js"></script>
+</div>
+    <script src="script.js"></script>
 </body>
-</html>
 
+</html>
